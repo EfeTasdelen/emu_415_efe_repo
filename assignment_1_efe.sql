@@ -6,16 +6,16 @@ USE EMU415_SSEU;
 -- STEP #2 - Create the table called "team_members".
 CREATE TABLE team_members (
     member_id INT PRIMARY KEY AUTO_INCREMENT,  -- member_id artık primary key ve auto_increment
-    first_name VARCHAR(128) NOT NULL,         -- first_name NULL olamaz
-    last_name VARCHAR(128) NOT NULL,          -- last_name NULL olamaz
-    student_id VARCHAR(128) NOT NULL,         -- student_id NULL olamaz
-    email VARCHAR(128) NOT NULL,              -- email NULL olamaz
-    nationality VARCHAR(128) NOT NULL,        -- nationality NULL olamaz
-    advisor_name VARCHAR(128) NOT NULL,       -- advisor_name NULL olamaz
-    birthdate DATE NOT NULL,                  -- birthdate NULL olamaz
-    join_year INT NOT NULL,                   -- join_year NULL olamaz
-    biography TEXT NOT NULL,                           -- biography NULL olabilir
-    website_url VARCHAR(255) NOT NULL                 -- website_url NULL olabilir
+    first_name VARCHAR(128) NOT NULL,         
+    last_name VARCHAR(128) NOT NULL,          
+    student_id VARCHAR(128) NOT NULL,         
+    email VARCHAR(128) NOT NULL,              
+    nationality VARCHAR(128) NOT NULL,        
+    advisor_name VARCHAR(128) NOT NULL,      
+    birthdate DATE NOT NULL,                  
+    join_year INT NOT NULL,                   
+    biography TEXT NOT NULL,                           
+    website_url VARCHAR(255) NOT NULL                 
 ); 
 
 -- STEP #3 - Insert team member's data to the table.
