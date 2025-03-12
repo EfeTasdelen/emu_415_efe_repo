@@ -194,7 +194,20 @@ SELECT join_year ,
 FROM team_members
 GROUP BY join_year;
 
+-- STEP #6 - Hash Identifier Generation
+SELECT
+(SELECT COUNT(member_id) FROM  team_members) AS total_members,
+(SELECT MAX( graduation_year) FROM team_members) AS latest_expected_graduation_year,
+(SELECT MIN(TIMESTAMPDIFF(YEAR,birthdate,CURDATE())) FROM team_members) AS youngest_members_age
+;
 
+SELECT SHA1(
+	CONCAT(
+		(SELECT COUNT(member_id) FROM  team_members), '-',
+        (SELECT MAX( graduation_year) FROM team_members), '-',
+        (SELECT MIN(TIMESTAMPDIFF(YEAR,birthdate,CURDATE())) FROM team_members)
+        )
+        ) AS team_statistics_hash;
 
 -- Veritabanını ve tabloyu kontrol etme
 SHOW DATABASES;
