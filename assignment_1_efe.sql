@@ -94,7 +94,7 @@ INSERT INTO team_members (
     'Turkish',
     'Kağan Gökbayrak',
     '2002-04-13',
-    '2020',
+    2020,
     'Mustafa Umut Tayar was born in Trabzon and is the elder of two siblings. He is a final-year Industrial Engineering student at Hacettepe University and currently works at MKE.',
     'https://www.linkedin.com/in/mustafa-umut-tayar-aa9a23275/'
     );
@@ -120,10 +120,39 @@ INSERT INTO team_members (
     'Turkish',
     'Kağan Gökbayrak',
     '2002-07-17',
-    '2020',
+    2020,
     'Süleyman ÇELİK was born in Denizli. He is a final-year Industrial Engineering student at Hacettepe University and currently works at Petlas.',
     'https://www.linkedin.com/in/süleyman-çelik-989009225/'
     );
+
+INSERT INTO team_members (
+	member_id,
+	first_name,
+    last_name,
+    student_id,
+    email,
+    nationality,
+    advisor_name,
+    birthdate,
+    join_year,
+    biography,
+    website_url
+) VALUES (
+	5,
+    'Necati Berkay',
+    'Vural',
+	'2210469064',
+    'berkayvural@hacettepe.edu.tr',
+    'Turkish',
+    'Banu Yüksel Özkaya',
+    '2001-10-19',
+    2021,
+	'Necati Berkay Vural is a senior Industrial Engineering student at Hacettepe University. He has an interest in 3D modeling and animation. He aims to enhance his skills in data analysis and optimization. He is particularly interested in the automotive industry and plans his career accordingly.',
+    'https://www.linkedin.com/in/necati-berkay-vural-979839229/'
+    );
+
+
+
 
     
 
