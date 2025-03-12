@@ -1,12 +1,10 @@
 -- Create Database.
 CREATE DATABASE EMU415_SSEU DEFAULT CHARACTER SET utf8; 
-
 -- Use the database that we created for further operations.
 USE EMU415_SSEU;
-
 -- Create the table called "team_members".
 CREATE TABLE team_members (
-	member_id INT ,
+	member_id INT PRIMARY KEY AUTO_INCREMENT ,
     first_name VARCHAR(128) ,
     last_name VARCHAR(128) ,
     student_id VARCHAR(128) , 
@@ -151,9 +149,23 @@ INSERT INTO team_members (
     'https://www.linkedin.com/in/necati-berkay-vural-979839229/'
     );
 
+ALTER TABLE team_members
+ADD study_duration INT;
 
+ALTER TABLE team_members
+ADD graduation_year INT;
 
+ALTER TABLE team_members
+ADD years_remaining INT;
 
+UPDATE team_members  SET study_duration = 2025- join_year
+WHERE member_id >0;
+
+UPDATE team_members  SET graduation_year = join_year + 5
+WHERE member_id >0;
+
+UPDATE team_members SET years_remaining = graduation_year - 2025
+WHERE member_id >0;
     
 
 SHOW DATABASES;
