@@ -217,8 +217,14 @@ SELECT join_year ,
 FROM team_members
 GROUP BY join_year
 
-
-
+-- STEP #6 - SHA1 Algorithm.
+SELECT SHA1(
+    CONCAT(
+        (SELECT COUNT(*) FROM team_members), '-',
+        (SELECT MAX(graduation_year) FROM team_members), '-',
+        (SELECT TIMESTAMPDIFF(YEAR, (SELECT MAX(birthdate) FROM team_members), CURDATE()))
+    )
+) AS identifier;
 
 -- Veritabanını ve tabloyu kontrol etme
 SHOW DATABASES;
