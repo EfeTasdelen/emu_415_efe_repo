@@ -140,6 +140,29 @@ INSERT INTO team_members (
     'https://www.linkedin.com/in/necati-berkay-vural-979839229/'
 );
 
+INSERT INTO team_members (
+    first_name,
+    last_name,
+    student_id,
+    email,
+    nationality,
+    advisor_name,
+    birthdate,
+    join_year,
+    biography,
+    website_url
+) VALUES (
+	'Ulaş Utku',
+    'Bedel',
+    '2210469012',
+    'ubedel84@gmail.com',
+    'Turkish',
+    'Banu Yüksel Özkaya',
+    '2003-05-05',
+    '2021',
+    'Ulaş Utku Bedel is a Hacettepe University Industrial Engineering 4th-year student.',
+    'https://www.linkedin.com/in/ula%C5%9F-utku-bedel-7651212b9?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app'
+);
 -- STEP 4 - Add Columns for Expected Graduation Year and Age Column.
 
 -- Add Field "study_duration"
@@ -192,7 +215,9 @@ SELECT * FROM team_members ORDER BY  birthdate DESC;
 SELECT join_year , 
 	COUNT(*) AS num_of_members
 FROM team_members
-GROUP BY join_year;
+GROUP BY join_year
+
+
 
 
 -- Veritabanını ve tabloyu kontrol etme
