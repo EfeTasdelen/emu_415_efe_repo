@@ -1,21 +1,21 @@
 -- STEP #1 - Create Database.
-CREATE DATABASE EMU415_SSEU DEFAULT CHARACTER SET utf8; 
+CREATE DATABASE EMU415_DataGurus DEFAULT CHARACTER SET utf8; 
 
-USE EMU415_SSEU;
+USE EMU415_DataGurus;
 
 -- STEP #2 - Create the table called "team_members".
 CREATE TABLE team_members (
     member_id INT PRIMARY KEY AUTO_INCREMENT,  -- member_id artık primary key ve auto_increment
-    first_name VARCHAR(128) NOT NULL,         
-    last_name VARCHAR(128) NOT NULL,          
-    student_id VARCHAR(128) NOT NULL,         
-    email VARCHAR(128) NOT NULL,              
-    nationality VARCHAR(128) NOT NULL,        
-    advisor_name VARCHAR(128) NOT NULL,      
-    birthdate DATE NOT NULL,                  
-    join_year INT NOT NULL,                   
-    biography TEXT NOT NULL,                           
-    website_url VARCHAR(255) NOT NULL                 
+    first_name VARCHAR(128) NOT NULL,         -- first_name NULL olamaz
+    last_name VARCHAR(128) NOT NULL,          -- last_name NULL olamaz
+    student_id VARCHAR(128) NOT NULL,         -- student_id NULL olamaz
+    email VARCHAR(128) NOT NULL,              -- email NULL olamaz
+    nationality VARCHAR(128) NOT NULL,        -- nationality NULL olamaz
+    advisor_name VARCHAR(128) NOT NULL,       -- advisor_name NULL olamaz
+    birthdate DATE NOT NULL,                  -- birthdate NULL olamaz
+    join_year INT NOT NULL,                   -- join_year NULL olamaz
+    biography TEXT NOT NULL,                           -- biography NULL olabilir
+    website_url VARCHAR(255) NOT NULL                 -- website_url NULL olabilir
 ); 
 
 -- STEP #3 - Insert team member's data to the table.
@@ -194,20 +194,6 @@ SELECT join_year ,
 FROM team_members
 GROUP BY join_year;
 
--- STEP #6 - Hash Identifier Generation
-SELECT
-(SELECT COUNT(member_id) FROM  team_members) AS total_members,
-(SELECT MAX( graduation_year) FROM team_members) AS latest_expected_graduation_year,
-(SELECT MIN(TIMESTAMPDIFF(YEAR,birthdate,CURDATE())) FROM team_members) AS youngest_members_age
-;
-
-SELECT SHA1(
-	CONCAT(
-		(SELECT COUNT(member_id) FROM  team_members), '-',
-        (SELECT MAX( graduation_year) FROM team_members), '-',
-        (SELECT MIN(TIMESTAMPDIFF(YEAR,birthdate,CURDATE())) FROM team_members)
-        )
-        ) AS team_statistics_hash;
 
 -- Veritabanını ve tabloyu kontrol etme
 SHOW DATABASES;
